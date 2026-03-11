@@ -1,0 +1,289 @@
+# Version: 1.4.0 (see https://semver.org/)
+# Updated: 2026-01-30
+
+# See https://editorconfig.org/ for more information about .editorconfig files.
+
+#### Основные параметры EditorConfig ####
+
+# Этот файл является самым верхним EditorConfig файлом.
+root = true
+
+# Все файлы.
+[*.*]
+charset = utf-8
+
+# Отступы и интервалы.
+indent_size = 2
+indent_style = space
+tab_width = 2
+trim_trailing_whitespace = true
+max_line_length = 120
+
+# Предпочтения для новых строк.
+end_of_line = crlf
+insert_final_newline = true
+
+#### Правила форматирования C# ####
+# See https://learn.microsoft.com/ru-ru/dotnet/fundamentals/code-analysis/style-rules/csharp-formatting-options.
+
+# Предпочтения для новых строк.
+csharp_new_line_before_members_in_object_initializers = true
+csharp_new_line_before_open_brace = all
+
+# Предпочтения переноса.
+csharp_preserve_single_line_statements = false
+
+# Предпочтения для интервалов.
+csharp_space_after_comma = true
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_space_around_binary_operators = before_and_after
+csharp_space_between_method_call_name_and_opening_parenthesis = false
+csharp_space_between_method_declaration_name_and_open_parenthesis = false
+
+#### Рекомендации по написанию кода C# ####
+
+# Предпочтения для блоков кода.
+csharp_prefer_braces = when_multiline
+csharp_style_namespace_declarations = file_scoped
+
+# Члены, заданные выражениями.
+csharp_style_expression_bodied_properties = true
+csharp_style_expression_bodied_methods = true
+
+# Предпочтения модификатора.
+dotnet_style_require_accessibility_modifiers = never
+
+# Выражения уровень предпочтения.
+csharp_style_implicit_object_creation_when_type_is_apparent = true
+
+#### ReSharper CLI tool CleanupCode ####
+# See https://www.jetbrains.com/help/resharper/EditorConfig_Index.html.
+
+# Пустые строки (Blank Lines).
+csharp_blank_lines_around_type = 1
+csharp_blank_lines_around_local_method = 1
+csharp_blank_lines_around_single_line_field = 1
+csharp_blank_lines_around_single_line_auto_property = 1
+csharp_blank_lines_before_single_line_comment = 1
+csharp_blank_lines_around_region = 1
+csharp_blank_lines_inside_region = 1
+csharp_blank_lines_before_block_statements = 1
+csharp_blank_lines_after_block_statements = 1
+csharp_blank_lines_before_multiline_statements = 1
+csharp_blank_lines_after_multiline_statements = 1
+csharp_blank_lines_before_control_transfer_statements = 1
+csharp_keep_blank_lines_in_declarations = 1
+
+# Синтаксический стиль (Syntax Style).
+csharp_default_internal_modifier = implicit
+csharp_force_attribute_style = separate
+csharp_prefer_qualified_reference = true
+csharp_trailing_comma_in_multiline_lists = true
+csharp_modifiers_order = public protected internal private static new abstract virtual sealed override readonly unsafe required volatile async
+csharp_style_expression_bodied_accessors = true
+csharp_object_creation_when_type_evident = target_typed
+
+# Табуляция, отступы, выравнивание (Tabs, Indents, Alignment).
+csharp_stick_comment = false
+
+# Разрывы строк (Line Breaks).
+csharp_wrap_parameters_style = chop_if_long
+csharp_wrap_after_declaration_lpar = true
+csharp_new_line_before_while = true
+csharp_wrap_arguments_style = chop_if_long
+csharp_wrap_after_invocation_lpar = true
+csharp_wrap_chained_method_calls = chop_if_long
+csharp_place_type_attribute_on_same_line = never
+csharp_place_method_attribute_on_same_line = never
+csharp_place_accessorholder_attribute_on_same_line = never
+csharp_place_accessor_attribute_on_same_line = never
+csharp_place_field_attribute_on_same_line = never
+csharp_max_initializer_elements_on_line = 1
+
+#### Анализаторы ####
+#### .NET compiler platform (Roslyn) analyzers ####
+# See https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/overview.
+
+# Code-style rules. Language and unnecessary rules.
+# See https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/language-rules.
+dotnet_diagnostic.IDE0005.severity = warning # Using directive is unnecessary.
+
+# .NET compiler errors and messages.
+# See https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/.
+dotnet_diagnostic.CS1591.severity = none
+
+# Microsoft.CodeAnalysis.NetAnalyzers.
+# https://learn.microsoft.com/ru-ru/dotnet/fundamentals/code-analysis/quality-rules/design-warnings
+dotnet_diagnostic.CA1000.severity = none # Do not declare static members on generic types.
+dotnet_diagnostic.CA1002.severity = none # Do not expose generic lists. | ~ S3956
+dotnet_diagnostic.CA1200.severity = warning # Avoid using cref tags with a prefix
+dotnet_diagnostic.CA1304.severity = warning # Specify CultureInfo. | ~ S4056
+dotnet_diagnostic.CA1305.severity = warning # Specify IFormatProvider. | ~ S4056
+dotnet_diagnostic.CA1311.severity = warning # Specify a culture or use an invariant version. | ~ S4056
+dotnet_diagnostic.CA1508.severity = warning # Avoid dead conditional code.
+dotnet_diagnostic.CA1720.severity = warning # Identifier contains type name.
+dotnet_diagnostic.CA1725.severity = none # Parameter names should match base declaration. | ~ S927, RCS1168
+dotnet_diagnostic.CA1806.severity = warning # Do not ignore method results
+dotnet_diagnostic.CA1822.severity = none # Mark members as static. | ~ S2325
+dotnet_diagnostic.CA1851.severity = warning # Possible multiple enumerations of 'IEnumerable' collection.
+dotnet_diagnostic.CA1854.severity = warning # Prefer the 'IDictionary.TryGetValue(TKey, out TValue)' method.
+dotnet_diagnostic.CA1861.severity = warning # Avoid constant arrays as arguments.
+dotnet_diagnostic.CA1860.severity = warning # Avoid using 'Enumerable.Any()' extension method. | ~ RCS1080
+dotnet_diagnostic.CA2000.severity = warning # Dispose objects before losing scope.
+dotnet_diagnostic.CA2234.severity = warning # Pass system uri objects instead of strings. | ~ S4005
+
+#### StyleCop ####
+# See https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/DOCUMENTATION.md.
+
+# Special Rules.
+dotnet_diagnostic.SA0001.severity = none #
+dotnet_diagnostic.SA1000.severity = warning #
+dotnet_diagnostic.SA1005.severity = warning # Single line comment should begin with a space.
+
+# Spacing Rules.
+dotnet_diagnostic.SA1025.severity = warning # Code should not contain multiple whitespace characters in a row.
+dotnet_diagnostic.SA1026.severity = warning # The keyword 'new' should not be followed by a space or a blank line.
+
+# Readability Rules.
+dotnet_diagnostic.SA1101.severity = none #
+dotnet_diagnostic.SA1106.severity = warning # Code should not contain empty statements.
+dotnet_diagnostic.SA1115.severity = warning # The parameter should begin on the line after the previous parameter.
+dotnet_diagnostic.SA1116.severity = none # The parameters should begin on the line after the declaration, whenever the parameter span across multiple lines.
+dotnet_diagnostic.SA1123.severity = none # The C# code contains a region within the body of a code element. Region should not be located within a code element.
+dotnet_diagnostic.SA1124.severity = none # The C# code contains a region. Do not use regions.
+dotnet_diagnostic.SA1133.severity = none # Each attribute should be placed in its own set of square brackets.
+dotnet_diagnostic.SA1137.severity = warning # Elements should have the same indentation.
+
+# Ordering Rules.
+dotnet_diagnostic.SA1200.severity = warning #
+dotnet_diagnostic.SA1202.severity = none # 'public' members should come before 'private' members.
+dotnet_diagnostic.SA1204.severity = none # Static members should appear before non-static members.
+dotnet_diagnostic.SA1205.severity = none # Partial elements should declare an access modifier.
+dotnet_diagnostic.SA1210.severity = none #
+
+# Naming rules.
+dotnet_diagnostic.SA1309.severity = none # Field '<_field>' should not begin with an underscore.
+dotnet_diagnostic.SA1305.severity = warning # Field names should not use Hungarian notation.
+dotnet_diagnostic.SA1317.severity = error
+
+# Maintainability Rules.
+dotnet_diagnostic.SA1402.severity = none # File may only contain a single type.
+dotnet_diagnostic.SA1407.severity = none # Arithmetic expressions should declare precedence.
+dotnet_diagnostic.SA1413.severity = warning # Use trailing comma in multi-line initializers.
+
+# Layout Rules.
+dotnet_diagnostic.SA1503.severity = none # Braces should not be omitted.
+dotnet_diagnostic.SA1507.severity = warning # Code should not contain multiple blank lines in a row.
+dotnet_diagnostic.SA1508.severity = warning # A closing brace should not be preceded by a blank line.
+dotnet_diagnostic.SA1512.severity = warning # Single-line comments should not be followed by blank line.
+dotnet_diagnostic.SA1513.severity = warning # Closing brace should be followed by blank line.
+dotnet_diagnostic.SA1515.severity = warning # Single-line comment should be preceded by blank line.
+dotnet_diagnostic.SA1519.severity = warning # Braces should not be omitted from multi-line child statement. | ~ RCS1001
+
+# Documentation Rules.
+dotnet_diagnostic.SA1600.severity = warning # Elements should be documented.
+dotnet_diagnostic.SA1601.severity = none # Partial elements should be documented.
+dotnet_diagnostic.SA1609.severity = warning # Property documentation should have value.
+dotnet_diagnostic.SA1614.severity = warning # Element parameter documentation should have text.
+dotnet_diagnostic.SA1616.severity = warning # Element return value documentation should have text.
+dotnet_diagnostic.SA1623.severity = none # The property's documentation summary text should begin with: 'Gets or sets'.
+dotnet_diagnostic.SA1625.severity = none # Element documentation should not be copied and pasted (SA1625).
+dotnet_diagnostic.SA1626.severity = warning #
+dotnet_diagnostic.SA1629.severity = warning # Documentation text should end with a period.
+dotnet_diagnostic.SA1633.severity = none
+dotnet_diagnostic.SA1642.severity = none # Constructor summary documentation should begin with standard text.
+dotnet_diagnostic.SA1649.severity = none
+
+#### Roslynator ####
+# See https://josefpihrt.github.io/docs/roslynator/analyzers.
+
+# RCS1264.
+roslynator_use_var = always
+
+dotnet_diagnostic.RCS0020.severity = none # Format accessor's braces on a single line or multiple lines.
+dotnet_diagnostic.RCS0042.severity = none # Put auto-accessors on a single line.
+dotnet_diagnostic.RCS0062.severity = none # Put expression body on its own line.
+dotnet_diagnostic.RCS1001.severity = none # Add braces to if statement (when expression spans over multiple lines). | ~ *SA1519
+dotnet_diagnostic.RCS1002.severity = warning # Remove braces from if statement.
+dotnet_diagnostic.RCS1004.severity = warning # Remove braces from if-else.
+dotnet_diagnostic.RCS1006.severity = warning # Merge 'else' with nested 'if'.
+dotnet_diagnostic.RCS1031.severity = none # Remove unnecessary braces in switch section.
+dotnet_diagnostic.RCS1061.severity = warning # Merge 'if' with nested 'if'.
+dotnet_diagnostic.RCS1077.severity = warning # Optimize LINQ method call.
+dotnet_diagnostic.RCS1080.severity = none # Use 'Count/Length' property instead of 'Any' method. | ~ *CA1860
+dotnet_diagnostic.RCS1102.severity = none # Make class static.
+dotnet_diagnostic.RCS1104.severity = warning # Simplify conditional expression.
+dotnet_diagnostic.RCS1111.severity = warning # Add braces to switch section with multiple statements.
+dotnet_diagnostic.RCS1118.severity = warning # Mark local variable as const. | ~ S3353
+dotnet_diagnostic.RCS1124.severity = warning # Inline local variable.
+dotnet_diagnostic.RCS1138.severity = warning # Add summary to documentation comment.
+dotnet_diagnostic.RCS1140.severity = warning # Add exception to documentation comment.
+dotnet_diagnostic.RCS1145.severity = warning # Remove redundant 'as' operator.
+dotnet_diagnostic.RCS1146.severity = warning # Use conditional access.
+dotnet_diagnostic.RCS1163.severity = warning # Unused parameter.
+dotnet_diagnostic.RCS1168.severity = none # Parameter name differs from base name. Отключено, т. к. DDS не распознает сигнатуру и генерирует код заново. | ~ CA1725, S927
+dotnet_diagnostic.RCS1179.severity = warning # Unnecessary assignment.
+dotnet_diagnostic.RCS1196.severity = warning # Call extension method as instance method.
+dotnet_diagnostic.RCS1197.severity = warning # Optimize StringBuilder.Append/AppendLine call.
+dotnet_diagnostic.RCS1198.severity = warning # Avoid unnecessary boxing of value type.
+dotnet_diagnostic.RCS1201.severity = warning # Use method chaining.
+dotnet_diagnostic.RCS1202.severity = warning # Avoid NullReferenceException.
+dotnet_diagnostic.RCS1205.severity = none # Order named arguments according to the order of parameters.
+dotnet_diagnostic.RCS1211.severity = warning # Remove unnecessary 'else'.
+dotnet_diagnostic.RCS1212.severity = warning # Remove redundant assignment.
+dotnet_diagnostic.RCS1221.severity = warning # Use pattern matching instead of combination of 'as' operator and null check.
+dotnet_diagnostic.RCS1225.severity = warning # Make class sealed.
+dotnet_diagnostic.RCS1238.severity = warning # Avoid nested ?: operators. | ~ S3358
+dotnet_diagnostic.RCS1264.severity = warning # Use 'var' or explicit type.
+
+#### Microsoft.VisualStudio.Threading ####
+# See https://microsoft.github.io/vs-threading/analyzers/index.html.
+dotnet_diagnostic.VSTHRD200.severity = warning # Use "Async" suffix in names of methods that return an awaitable type.
+
+#### SonarAnalyzer ####
+# See https://rules.sonarsource.com/csharp/.
+dotnet_diagnostic.S101.severity = none # Rename class to match pascal case naming rules.
+dotnet_diagnostic.S103.severity = none # Lines should not be too long.
+dotnet_diagnostic.S109.severity = warning # Magic numbers should not be used.
+dotnet_diagnostic.S126.severity = warning # Add the missing 'else' clause with either the appropriate action or a suitable comment as to why no action is taken.
+dotnet_diagnostic.S134.severity = warning # Control flow statements "if", "switch", "for", "foreach", "while", "do" and "try" should not be nested too deeply.
+dotnet_diagnostic.S927.severity = none # Rename parameter to match the base class declaration. | ~ CA1725, *RCS1168
+dotnet_diagnostic.S1118.severity = none # Add a 'protected' constructor or the 'static' keyword to the class declaration. | ~ CA1052
+dotnet_diagnostic.S1185.severity = none # Remove this method '<MethodName>' to simply inherit its behavior.
+dotnet_diagnostic.S1168.severity = warning # Empty arrays and collections should be returned instead of null.
+dotnet_diagnostic.S1186.severity = warning # Add a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.
+dotnet_diagnostic.S1192.severity = warning # String literals should not be duplicated.
+dotnet_diagnostic.S1227.severity = warning # Break statements should not be used except for switch cases.
+dotnet_diagnostic.S1301.severity = none # "switch" statements should have at least 3 "case" clauses.
+dotnet_diagnostic.S1449.severity = none # Culture should be specified for "string" operations. | ~ *CA1305
+dotnet_diagnostic.S1481.severity = warning # Remove the unused local variable.
+dotnet_diagnostic.S1541.severity = warning # The Cyclomatic Complexity of this method is 11 which is greater than 10 authorized.
+dotnet_diagnostic.S1643.severity = warning # Strings should not be concatenated using '+' in a loop.
+dotnet_diagnostic.S1698.severity = warning # "==" should not be used when "Equals" is overridden.
+dotnet_diagnostic.S1854.severity = warning # Remove this useless assignment to local variable.
+dotnet_diagnostic.S2094.severity = none # Remove this empty class, write its code or make it an "interface".
+dotnet_diagnostic.S2325.severity = none # Make '<MethodName>' a static method. | ~ CA1822
+dotnet_diagnostic.S2360.severity = warning # Optional parameters should not be used".
+dotnet_diagnostic.S3059.severity = warning # Types should not have members with visibility set higher than the type's visibility.
+dotnet_diagnostic.S3218.severity = none # Rename this field to not shadow the outer class' member with the same name.
+dotnet_diagnostic.S3240.severity = warning # The simplest possible condition syntax should be used.
+dotnet_diagnostic.S3246.severity = warning # Generic type parameters should be co/contravariant when possible.
+dotnet_diagnostic.S3257.severity = warning # Declarations and initializations should be as concise as possible.
+dotnet_diagnostic.S3261.severity = none # Remove this empty namespace.
+dotnet_diagnostic.S3353.severity = none # Unchanged variables should be marked as "const". | ~ *RCS1118
+dotnet_diagnostic.S3358.severity = none # Ternary operators should not be nested. | ~ *RCS1238
+dotnet_diagnostic.S3878.severity = warning # Arrays should not be created for params parameters.
+dotnet_diagnostic.S3956.severity = none # "Generic.List" instances should not be part of public APIs. | ~ *CA1002
+dotnet_diagnostic.S4005.severity = none # Seal class or implement 'IEqualityComparer<T>' instead. | ~ *CA2234
+dotnet_diagnostic.S4017.severity = none # Method signatures should not contain nested generic types.
+dotnet_diagnostic.S4018.severity = warning # All type parameters should be used in the parameter list to enable type inference.
+dotnet_diagnostic.S4035.severity = none # Seal class or implement 'IEqualityComparer<T>' instead.
+dotnet_diagnostic.S4041.severity = none # Type names should not match namespaces.
+dotnet_diagnostic.S4056.severity = none # Overloads with a "CultureInfo" or an "IFormatProvider" parameter should be used. | ~ *CA1305, *CA1304
+dotnet_diagnostic.S4144.severity = warning # Update this method so that its implementation is not identical to '<MethodName>'.
+dotnet_diagnostic.S4226.severity = none # Extensions should be in separate namespaces.
+dotnet_diagnostic.S6562.severity = none # Provide the "DateTimeKind" when creating this object.
+dotnet_diagnostic.S6566.severity = none # Use "DateTimeOffset" instead of "DateTime".
+dotnet_diagnostic.S6580.severity = warning # Use a format provider when parsing date and time.
+dotnet_diagnostic.S6585.severity = none # Don't hardcode the format when turning dates and times to strings.
+dotnet_diagnostic.S6605.severity = warning # Collection-specific "Exists" method should be used instead of the "Any" extension.
